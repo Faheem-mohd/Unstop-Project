@@ -1,0 +1,55 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.seats {
+  display: grid;
+  gap: 10px;
+}
+
+.seats div {
+  display: flex;
+  justify-content: center;
+}
+
+span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  margin: 2px;
+  text-align: center;
+  font-size: 16px;
+  position: relative; /* For tooltip positioning */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+span.booked {
+  background-color: red;
+}
+
+span.available {
+  background-color: lightgreen;
+}
+
+span.selected {
+  background-color: yellow; /* Highlight selected seats */
+}
+
+.tooltip {
+  display: inline-block;
+  position: absolute;
+  top: -25px; /* Position above the seat */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  visibility: visible; /* Show tooltip when seat is selected */
+  z-index: 1;
+}

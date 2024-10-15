@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Train Seat Booking System</h1>
+
+  <div class="seats">
+    <div *ngFor="let row of seats">
+      <span *ngFor="let seat of row" 
+            [class.booked]="seat.status === 'X'"
+            [class.available]="seat.status === 'O'">
+        {{ seat.number }}
+      </span>
+    </div>
+  </div>
+
+  <div>
+    <label for="seatInput">Enter number of seats to book (1-7):</label>
+    <input id="seatInput" type="number" #seatCount min="1" max="7">
+    <button (click)="bookSeats(seatCount.value)">Book Seats</button>
+  </div>
+</div>
